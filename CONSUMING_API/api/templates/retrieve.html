@@ -1,0 +1,48 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Detail</title>
+    <style>
+    table,th,td {
+            width:%;
+            background-color:white;
+            border: 1px solid black;
+            align-content: center;
+            justify-content: center;
+  }
+  </style>
+</head>
+<body>
+        <div>
+            <h2>Book Details</h2>
+        </div>
+    <table>
+        <tr>
+            <th>Book Name</th>
+            <th>Book Price</th>
+            <th>Author Name</th>
+            <th>Author Phone</th>
+        </tr>
+            <tr>
+                <td>{{ book.name_of_book }}</td>
+                <td>{{ book.book_price }}</td>
+                <td>{{ book.authors_name}}</td>
+                <td>{{ book.author_phone}}</td>
+            <td>
+                <form class="" name="UpdateForm" action="{% url 'update' pk=book.id %}">
+                    {% csrf_token %}
+                    <input type="submit" value="Update">
+                </form>
+            </td>
+            <td>
+                <form class="" name="DeleteForm" action="{% url 'delete' pk=book.id %}">
+                    {% csrf_token %}
+                    <input type="submit" value="Delete">
+                </form>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

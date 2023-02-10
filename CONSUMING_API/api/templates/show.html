@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+     table,th,td {
+            width:%;
+            background-color:white;
+            border: 1px solid black;
+            align-content: center;
+            justify-content: center;
+  }
+        </style>
+    <title>Display Data</title>
+</head>
+<body>
+<h2> Books Details </h2>
+<table >
+    <tr>
+        <th>Name of book</th>
+        <th>Book price</th>
+        <th>Authors name</th>
+        <th>Author phone</th>
+        <th>Update</th>
+        <th>Delete</th>
+    </tr>
+
+    {% for val in book %}
+    <tr>
+        <td>{{val.name_of_book}}</td>
+        <td>{{val.book_price}}</td>
+        <td>{{val.authors_name}}</td>
+        <td>{{val.author_phone}}</td>
+        <td><a href="{% url 'update' val.id %}">Update</a></td>
+        <td><a href="{% url 'delete' pk=val.id %}">Delete</a></td>
+    </tr>
+    {% endfor %}
+    </table>
+</body>
+</html>
