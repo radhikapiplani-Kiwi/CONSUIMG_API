@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Details</title>
+     <style>
+        form {
+            width:50%;
+            background-color:white;
+            border: 1px solid black;
+        }
+     </style>
+</head>
+<body>
+   <form action="{% url 'index' %}" method="post">
+    <h2> Book Details </h2>
+    {% csrf_token %}
+    {{form.as_p}}
+    <form action="{% url 'show' %}">
+    <button style="margin-bottom: 4px;" type="submit">Submit</button>
+    </form>
+   </form>
+</body>
+</html>

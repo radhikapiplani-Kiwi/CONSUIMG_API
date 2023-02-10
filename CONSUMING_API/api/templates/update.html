@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Update Books Details</title>
+        <style>
+        form {
+            width:50%;
+            background-color:white;
+            border: 1px solid black;
+        }
+    </style>
+    </head>
+    <body>
+        <form method="post">
+            <h1>Update Books Details</h1>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Update">
+        </form>
+    </body>
+</html>
+
+
+
+
