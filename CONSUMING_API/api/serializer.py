@@ -4,7 +4,7 @@ from .models import Book
 
 class CreateBookSerializer(serializers.ModelSerializer):
     """
-    Serializer class for Creating Student
+    Serializer class for Creating Book
     """
     name_of_book = serializers.CharField(max_length=20, required=True)
     book_price = serializers.CharField(max_length=100, required=True)
@@ -33,7 +33,7 @@ class CreateBookSerializer(serializers.ModelSerializer):
 
 class UpdateBookSerializer(serializers.ModelSerializer):
     """
-    Serializer class for Updating Student
+    Serializer class for Updating Book
     """
     name_of_book = serializers.CharField(max_length=20, required=True)
     book_price = serializers.CharField(max_length=100, required=True)
